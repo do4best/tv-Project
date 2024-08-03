@@ -65,18 +65,18 @@ const updateTvShow=(tvshow)=>{
         <>
 
             <div className="d-flex p-3 flex-column mh-100 d-inline-block  bg-black" style={{ height:"100vh",width:"100vw",background:theTvShow?`linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("${back_drop_url}${theTvShow.backdrop_path}") no-repeat center / cover`:"black"}}>
-            <div className="container" style={{flex:2}}>
+            <div className="container-sm" style={{flex:2}}>
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-sm-12 col-md-12 col-4 ">
                         <TvLogo img={image} title={"Ravi Scientific Traders"} subtitle={"Your favorite Tv Show is Here"}/>
                     </div>
-                    <div className="col-4 pt-2">
+                    <div className="col-sm-12 col-md-12 col-4 pt-2">
                         <SearchTvShow submitit={Recommend_by_title}/>
                     </div>
                 </div>
             </div>
-                <div className="" style={{flex:4}}>{theTvShow && <TvShowDetails tvShowDetails={theTvShow}/>}</div>
-                <div className="" style={{flex:2}}>{theTvShow &&<TvShowList onClickItem={updateTvShow} tvShowList={recomendTv}/>}</div>
+                <div className="col-sm-12 col-md-12" style={{flex:4}}>{theTvShow && <TvShowDetails tvShowDetails={theTvShow}/>}</div>
+                <div className="col-sm-12 col-md-12" style={{flex:2}}>{theTvShow &&<TvShowList onClickItem={updateTvShow} tvShowList={recomendTv}/>}</div>
             </div>
 
         </>
