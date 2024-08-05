@@ -67,16 +67,41 @@ const updateTvShow=(tvshow)=>{
             <div className="d-flex p-3 flex-column mh-100 d-inline-block  bg-black" style={{ height:"100vh",width:"100vw",background:theTvShow?`linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("${back_drop_url}${theTvShow.backdrop_path}") no-repeat center / cover`:"black"}}>
             <div className="container-sm" style={{flex:2}}>
                 <div className="row">
-                    <div className="col-sm-12 col-md-12 col-4 ">
+                    <div className="col-12 col-md-12 col-4 ">
                         <TvLogo img={image} title={"Ravi Scientific Traders"} subtitle={"Your favorite Tv Show is Here"}/>
                     </div>
-                    <div className="col-sm-12 col-md-12 col-4 pt-2">
+                    <div className="col-12 col-md-12 col-4 pt-2">
                         <SearchTvShow submitit={Recommend_by_title}/>
                     </div>
                 </div>
             </div>
                 <div className="col-sm-12 col-md-12" style={{flex:4}}>{theTvShow && <TvShowDetails tvShowDetails={theTvShow}/>}</div>
-                <div className="col-sm-12 col-md-12" style={{flex:2}}>{theTvShow &&<TvShowList onClickItem={updateTvShow} tvShowList={recomendTv}/>}</div>
+                <div className="col-sm-12 col-md-12" style={{flex: 2}}>
+                    <div id="carouselExampleIndicators" className="carousel slide">
+                        <div className="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    className="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                        </div>
+                        <div className="carousel-inner">
+                            {theTvShow && <TvShowList onClickItem={updateTvShow} tvShowList={recomendTv}/>}
+                        </div>
+                        <button className="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                  </div>
             </div>
 
         </>

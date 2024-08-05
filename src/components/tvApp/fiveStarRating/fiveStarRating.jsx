@@ -1,13 +1,14 @@
-import React from 'react';
+
 import {Star, StarFill, StarHalf,} from "react-bootstrap-icons";
+import PropTypes from "prop-types";
 
 function FiveStarRating({rating}) {
     {/*declare star icon*/}
     const starList=[];
 // store number of filled star
-    const starCount = Math.floor(rating)/5
+    const starCount = Math.floor(rating)
     {/* store if yes or no there is  half star*/}
-    const halfStar = rating - parseInt(rating) > 0.5;
+    const halfStar = (rating - parseInt(rating)) > 0.5;
     {/* store the number of empty star*/}
     const emptyStar = 5 - starCount - (halfStar?1:0)
     {/*Push the filled star icons*/}
@@ -29,3 +30,6 @@ function FiveStarRating({rating}) {
 }
 
 export default FiveStarRating;
+FiveStarRating.propTypes={
+    rating:PropTypes.any
+}
