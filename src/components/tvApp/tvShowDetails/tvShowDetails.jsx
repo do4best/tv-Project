@@ -9,7 +9,7 @@ function TvShowDetails({tvShowDetails}) {
             <div className="fw-bold fs-3">{tvShowDetails.original_name}</div>
             <div className="d-flex fs-4">
                 <FiveStarRating rating={voting}/>
-                <span className={" ms-2  "}>{voting.toPrecision(2)}/5</span>
+                <span className={" ms-2  "}>{voting}/5</span>
             </div>
             <div className="overflow-auto">{tvShowDetails.overview}</div>
 
